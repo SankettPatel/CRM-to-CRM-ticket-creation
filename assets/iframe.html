@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
+  <link rel="stylesheet" href="main.css">
+
+  <style>
+    body {
+      padding: 0 !important;
+      /* background-color: #faebd773; */
+      border-radius: 8px;
+    }
+    .row .col.offset-s3 {margin: 0;}
+    .row .col.s6 {width: 100%;}
+.ticket_form .email{
+  display:flex;
+  flex-direction: column;
+}
+    
+.ticket_form .sub{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ticket_form .desc{
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket_form .emailcc{
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket_form .priority{
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket_form .status{
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket_buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.title_desc{
+  padding-bottom: 5px;
+    font-family: Archivo;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    background-color: rgb(31, 115, 183);
+    color: rgb(255, 255, 255);
+    display: flex;
+    line-height: 2.5rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.field_box{
+    font-size: 14px;
+    color: #444444;
+    border-color: #44444466;
+    border-radius: 6px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 2px 4px 0px inset;
+    padding: 10px;
+}
+
+.field_box option{
+  color: rgb(0 0 0);
+  background:rgb(255, 255, 255) ;
+}
+
+.field_title{
+  font-size: 16px;
+    font-weight: 600;
+    font-family: Archivo;
+    margin: 10px 0;
+    display: none;
+    color: #444444;
+}
+
+.create_t{
+  padding: 5px;
+    width: 50%;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.show_t{
+  padding: 5px;
+    width: 50%;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.ticket_buttons button:hover, .ticket_buttons button:active, .ticket_buttons button:focus{
+  background: #0278bf;
+  color: #ffffff;
+}
+
+.form_div{
+  width: 100%;
+    /* padding: 10px; */
+    /* background: black; */
+    border-radius: 20px 20px 5px 5px;
+}
+
+/* .ticket_form{
+  padding: 10px;
+} */
+
+.gap{
+  margin-bottom: 12px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="title_desc">
+    <h4>Create ticket on Freshdesk</h4>
+  </div>
+  <br>
+  <div class="form_div">
+  <form id="createTicketForm" class="ticket_form">
+    <div class="sub gap">
+      <label for="subjectInput" class="field_title">Subject:</label>
+      <input type="text" class="field_box" id="subjectInput" name="subject" placeholder="Subject">
+    </div>
+    <div class="desc gap">
+      <label for="descriptionInput" class="field_title">Description:</label>
+      <textarea id="descriptionInput" class="field_box" name="description" placeholder="Description"></textarea>
+    </div>
+    <div class="email gap">
+      <label for="emailInput" class="field_title">Email:</label>
+      <input type="email" id="emailInput" class="field_box" name="email" placeholder="Email">
+    </div>
+    <div class="ticket_buttons">
+  </form>
+</div>
+</div>
+
+
+
+<script type="text/javascript" src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

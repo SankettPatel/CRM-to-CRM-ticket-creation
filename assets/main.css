@@ -1,0 +1,130 @@
+body {
+  margin-top: 10px;
+  padding-left: 40px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+footer {
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+
+.top-switch{
+  text-align: right;
+}
+
+input{
+  display: block;
+}
+
+.sb{
+  position: relative;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+  background: #666666;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sb::after{
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 3px 6px #666666;
+}
+
+input:checked + .sb{
+  background: #009900;
+}
+
+input:checked + .sb::after{
+  left: auto;
+  right: 2px;
+}
+
+[type=checkbox], [type=radio]{
+  display: none;
+}
+
+/* .login-page{
+
+} */
+
+.form{
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.form input{
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button{
+  text-transform: uppercase;
+  outline: 0;
+  background: #0278bf;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  -webkit-transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:hover, form button:active, form button:focus{
+  background: #045d93;
+  color: #ffffff;
+}
+.form .message{
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a{
+  color: #0278bf;
+  text-decoration: none;
+}
+
+.form .register-form{
+  display: none;
+}
+
+.container{
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+

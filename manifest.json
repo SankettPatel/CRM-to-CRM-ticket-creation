@@ -1,0 +1,20 @@
+{
+  "name": "Create ticket on Freshdesk",
+  "author": {
+    "name": "Sankett",
+    "email": "sanket7911@gmail.com",
+    "url": "https://example.com"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "ticket_sidebar": {
+        "url": "assets/iframe.html",
+        "flexible": true
+      }
+    }
+  },
+  "version": "2.0",
+  "frameworkVersion": "2.0"
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+
+    .table_row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid;
+    padding: 5px 40px;
+    }
+    .tickets-list td{
+      padding: 5px;
+    }
+
+  </style>
+    <head>
+        <title>Ticket List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
+      <body>
+        <table class="table table-striped">
+            <thead>
+                <tr class="table_row">
+                    <th class="table_sub">Subject</th>
+                    <th class="table_status">Status</th>
+                </tr>
+            </thead>
+          <tbody class="tickets-list"></tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+          var client = ZAFClient.init();
+          client.on('app.registered', function() {
+            var ticketClientPromise = client.get('instances').then(function(instancesData) {
+              var instances = instancesData.instances;
+              for (var instanceGuid in instances) {
+                if (instances[instanceGuid].location === 'ticket_sidebar') {
+                  return client.instance(instanceGuid);
+                }
+              }
+            });
+            ticketClientPromise.then(function(ticketClient) {
+              // Send a message back to the parent client to let it know the modal is now ready for events to be triggered
+              ticketClient.trigger('modalReady');
+            });
+          });
+            client.on('drawTickets', function(ticketsList){
+                $('.tickets-list').html(ticketsList);
+            });  
+        
+        </script>
+    </body>
+</html>
